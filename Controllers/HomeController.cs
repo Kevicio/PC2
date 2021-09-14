@@ -20,8 +20,38 @@ namespace PC2.Controllers
 
         public IActionResult Index()
         {
+            return RedirectToAction("Principal");
+        }
+
+        public IActionResult Principal()
+        {
             return View();
         }
+
+        public IActionResult Registro()
+        {
+            return View();
+        }
+
+        [HttpPost]
+         public IActionResult Registro(Registro objReg){
+            Console.WriteLine(objReg.Nombres);
+            Console.WriteLine(objReg.ApellidoPat);
+            Console.WriteLine(objReg.ApellidoMat);
+            Console.WriteLine(objReg.Mascota);
+            Console.WriteLine(objReg.Descripcion);
+            Console.WriteLine(objReg.Telefono);
+            Console.WriteLine(objReg.Distrito);
+            Console.WriteLine(objReg.Direccion);
+            return RedirectToAction("RegistroCon");
+        }
+        
+         public IActionResult RegistroCon(){
+            return View();
+        }
+
+
+
 
         public IActionResult Privacy()
         {
